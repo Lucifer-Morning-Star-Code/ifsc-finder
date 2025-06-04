@@ -1,0 +1,75 @@
+body {
+    background: #f2f4f7;
+    color: #1e293b;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.toggle button {
+    padding: 10px 20px;
+    border: none;
+    background: #e2e8f0;
+    color: #1e293b;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.toggle button.active {
+    background: #1e293b;
+    color: #ffffff;
+}
+.toggle button:not(:last-child) {
+    margin-right: 10px;
+}
+.toggle button:hover {
+    background: #cbd5e1;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.search-section input,
+.search-section select {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+}
+.search-section button {
+    padding: 10px;
+    border: none;
+    background: #1e293b;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.search-section button:hover {
+    background: #334155;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.result-row {
+    margin-bottom: 6px;
+}
+
+.hidden {
+    display: none;
+}

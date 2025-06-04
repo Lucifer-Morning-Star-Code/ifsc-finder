@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFSC Code Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IFSC Code Finder</h1>
+        <div class="toggle">
+            <button id="by-ifsc-tab" class="active">Search by IFSC Code</button>
+            <button id="by-branch-tab">Search by Bank</button>
+        </div>
+        <div id="search-by-ifsc" class="search-section">
+            <input type="text" id="ifsc-input" placeholder="Enter IFSC Code" />
+            <button id="ifsc-search-button">Search</button>
+        </div>
+        <div id="search-by-branch" class="search-section hidden">
+            <select id="bank-select">
+                <option value="">Select Bank</option>
+            </select>
+            <select id="state-select" disabled>
+                <option value="">Select State</option>
+            </select>
+            <select id="branch-select" disabled>
+                <option value="">Select Branch</option>
+            </select>
+            <button id="branch-search-button" disabled>Search</button>
+        </div>
+        <div id="error" class="error hidden"></div>
+        <div id="result" class="hidden">
+            <div class="result-row"><strong>Bank Name:</strong> <span id="bank-name"></span></div>
+            <div class="result-row"><strong>Branch:</strong> <span id="branch-name"></span></div>
+            <div class="result-row"><strong>IFSC Code:</strong> <span id="ifsc-code"></span> <button id="copy-btn">Copy</button></div>
+            <div class="result-row"><strong>MICR Code:</strong> <span id="micr"></span></div>
+            <div class="result-row"><strong>Address:</strong> <span id="address"></span></div>
+            <div class="result-row"><strong>Contact:</strong> <span id="contact"></span></div>
+            <div class="result-row"><strong>City:</strong> <span id="city"></span></div>
+            <div class="result-row"><strong>State:</strong> <span id="state"></span></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
