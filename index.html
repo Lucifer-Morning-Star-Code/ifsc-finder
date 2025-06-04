@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFSC Code Finder</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,11 +15,11 @@
             <button id="by-ifsc-tab" class="active">Search by IFSC Code</button>
             <button id="by-branch-tab">Search by Bank</button>
         </div>
-        <div id="search-by-ifsc" class="search-section">
+        <div id="search-by-ifsc" class="search-section show">
             <input type="text" id="ifsc-input" placeholder="Enter IFSC Code" />
             <button id="ifsc-search-button">Search</button>
         </div>
-        <div id="search-by-branch" class="search-section hidden">
+        <div id="search-by-branch" class="search-section">
             <select id="bank-select">
                 <option value="">Select Bank</option>
             </select>
@@ -29,6 +31,7 @@
             </select>
             <button id="branch-search-button" disabled>Search</button>
         </div>
+        <div id="loader" class="loader hidden"></div>
         <div id="error" class="error hidden"></div>
         <div id="result" class="hidden">
             <div class="result-row"><strong>Bank Name:</strong> <span id="bank-name"></span></div>

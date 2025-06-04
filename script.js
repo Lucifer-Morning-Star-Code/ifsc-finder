@@ -30,6 +30,7 @@ const branchSearchButton = document.getElementById('branch-search-button');
 const resultDiv = document.getElementById('result');
 const errorDiv = document.getElementById('error');
 const copyBtn = document.getElementById('copy-btn');
+const loader = document.getElementById('loader');
 
 const bankNameEl = document.getElementById('bank-name');
 const branchNameEl = document.getElementById('branch-name');
@@ -56,19 +57,21 @@ initBankDropdown();
 byIfscTab.addEventListener('click', () => {
     byIfscTab.classList.add('active');
     byBranchTab.classList.remove('active');
-    searchByIfsc.classList.remove('hidden');
-    searchByBranch.classList.add('hidden');
+    searchByIfsc.classList.add('show');
+    searchByBranch.classList.remove('show');
     errorDiv.classList.add('hidden');
     resultDiv.classList.add('hidden');
+    resultDiv.classList.remove('show');
 });
 
 byBranchTab.addEventListener('click', () => {
     byBranchTab.classList.add('active');
     byIfscTab.classList.remove('active');
-    searchByBranch.classList.remove('hidden');
-    searchByIfsc.classList.add('hidden');
+    searchByBranch.classList.add('show');
+    searchByIfsc.classList.remove('show');
     errorDiv.classList.add('hidden');
     resultDiv.classList.add('hidden');
+    resultDiv.classList.remove('show');
 });
 
 // Populate states when bank changes
@@ -120,6 +123,8 @@ branchSelect.addEventListener('change', () => {
 async function fetchIfscDetails(ifsc) {
     errorDiv.classList.add('hidden');
     resultDiv.classList.add('hidden');
+    resultDiv.classList.remove('show');
+    loader.classList.remove('hidden');
     try {
         const response = await fetch(`https://ifsc.razorpay.com/${ifsc}`);
         if (!response.ok) throw new Error('Invalid IFSC code');
@@ -129,6 +134,7 @@ async function fetchIfscDetails(ifsc) {
         errorDiv.textContent = err.message;
         errorDiv.classList.remove('hidden');
     }
+    loader.classList.add('hidden');
 }
 
 // Display result
@@ -142,6 +148,7 @@ function displayResult(data) {
     cityEl.textContent = data.CITY;
     stateEl.textContent = data.STATE;
     resultDiv.classList.remove('hidden');
+    resultDiv.classList.add('show');
 }
 
 // Event listeners for search buttons
