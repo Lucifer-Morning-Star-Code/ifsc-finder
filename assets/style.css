@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Container styling */
+.ifsc-finder-container {
+    max-width: 520px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Tab navigation */
+.ifsc-tabs {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.ifsc-tabs button {
+    padding: 8px 16px;
+    margin: 0 4px;
+    border: none;
+    background: #f1f5f9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.ifsc-tabs button.active {
+    background: #1e293b;
+    color: #fff;
+}
+.ifsc-tabs button:hover {
+    background: #e2e8f0;
+}
+
+/* Search sections */
+.ifsc-search-section {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+.ifsc-search-section.active {
+    display: flex;
+}
+
+.ifsc-search-section select,
+.ifsc-search-section input {
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+.ifsc-search-section button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #1e293b;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.ifsc-search-section button:hover {
+    background: #334155;
+}
+
+/* Result box */
+#resultOutput {
+    margin-top: 20px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 6px;
+}
+#resultOutput div {
+    margin-bottom: 6px;
+}
+
+#error-message {
+    color: #dc2626;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .ifsc-finder-container {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+}
